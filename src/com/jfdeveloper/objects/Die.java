@@ -27,8 +27,8 @@ public class Die {
 
     @Override
     public String toString() {
-        return "Die{" +
-                "faceUp=" + faceUp +
-                '}';
+        return "\n-----\n" +
+                "| "+ faceUp +" |\n"+
+                "-----";
     }
 }
