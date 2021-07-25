@@ -19,6 +19,15 @@ public class Console {
         };
     }
 
+        public static void wizardBar(int health, int power, int mana){
+            System.out.printf("Health: %d\tPower level: %d\tMana: %d",health,power,mana);
+        }
+
+
+
+
+
+
 }
 
 
