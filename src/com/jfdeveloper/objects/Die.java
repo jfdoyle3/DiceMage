@@ -25,10 +25,17 @@ public class Die {
 
     public int getFaces(){return faces;}
 
-    @Override
-    public String toString() {
+
+    public String displayDie() {
         return "\n-----\n" +
                 "| "+ faceUp +" |\n"+
                 "-----";
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                  faceUp +
+                '}';
     }
 }
