@@ -5,9 +5,10 @@ import java.util.Random;
 
 public class Die {
 
+    private final long SEED= System.currentTimeMillis();
     private int faces;
     private int faceUp;
-    private Random random=new Random();
+    private Random random=new Random(SEED);
 
 
     public Die (int faces){
