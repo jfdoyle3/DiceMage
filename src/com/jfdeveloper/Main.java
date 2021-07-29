@@ -2,6 +2,8 @@ package com.jfdeveloper;
 
 import com.jfdeveloper.objects.Dice;
 import com.jfdeveloper.objects.Die;
+import com.jfdeveloper.objects.Monster;
+import com.jfdeveloper.ui.Color;
 import com.jfdeveloper.ui.Console;
 
 import java.util.*;
@@ -12,13 +14,13 @@ public class Main {
     public static void main(String[] args) {
 
        List<Die> diceSet= Dice.set(5,6);
-        List<String> hp=new ArrayList<>();
-        hp.add("##########");
-
-        System.out.println(diceSet.toString());
+        Monster monster=new Monster(3);
+        monster.attack();
+        System.out.println(monster.toString());
 
         Console.manaDice(diceSet);
-        Console.hpBar(hp);
+
+
 
     }
 }

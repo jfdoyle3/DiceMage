@@ -6,35 +6,7 @@ import java.util.List;
 
 public class Console {
 
-    public static void dieDisplayLg(int value) {
-        String[][] dice = new String[][]{
-                {"* * * * *", // Die 1 -> this line is dice[0][0]
-                        "*       *",
-                        "*   #   *",
-                        "*       *",
-                        "* * * * *"
-                },
-                {"* * * * *", // Die 2
-                        "*    #  *",
-                        "*       *",
-                        "*  #    *",
-                        "* * * * *"
-                }
-        };
-    }
 
-    public static void disDisplaySm() {
-        String[][] dice = new String[][]{
-                {"-----",
-                        "| 1 |",
-                        "-----"
-                },
-                {"-----",
-                        "| 2 |",
-                        "-----"
-                }
-        };
-    }
 
 
     public static void wizardBar(int health, int power, int mana) {
@@ -42,14 +14,14 @@ public class Console {
     }
 
     public static void manaDice(List<Die> dice) {
-
-        System.out.println(Color.BLUE+dice.toString()+Color.RESET);
+        for(Die die : dice)
+        System.out.print(Color.BLUE + "["+die.getFaceUp()+"] " + Color.RESET);
 
     }
-    public static void hpBar(List<String> hitPoints){
 
-        System.out.println(Color.RED_BOLD_BRIGHT+hitPoints.toString()+Color.RESET);
-
+    public static void statusBar(List<String> hitPoints, List<String> manaPoints) {
+        System.out.println(Color.RED_BOLD_BRIGHT + hitPoints.toString() + Color.RESET);
+        System.out.println(Color.BLUE_BOLD_BRIGHT + manaPoints.toString() + Color.RESET);
     }
 
 }
