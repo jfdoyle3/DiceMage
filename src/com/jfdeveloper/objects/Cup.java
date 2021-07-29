@@ -9,7 +9,7 @@ public class Cup {
 
     public Cup() {
         while(dice.size() < 5) {
-            dice.add(new Die(6));
+            dice.add(new Die());
         }
     }
 

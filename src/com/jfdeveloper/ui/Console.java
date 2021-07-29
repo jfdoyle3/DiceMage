@@ -2,6 +2,7 @@ package com.jfdeveloper.ui;
 
 import com.jfdeveloper.objects.Die;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.List;
 
 public class Console {
@@ -19,9 +20,25 @@ public class Console {
 
     }
 
-    public static void statusBar(List<String> hitPoints, List<String> manaPoints) {
-        System.out.println(Color.RED_BOLD_BRIGHT + hitPoints.toString() + Color.RESET);
-        System.out.println(Color.BLUE_BOLD_BRIGHT + manaPoints.toString() + Color.RESET);
+    public static void statusBar(List<String> hitPoints, List<String> powerLvl,List<String> manaPoints) {
+            for(String point : hitPoints){
+                System.out.print(Color.RED_BACKGROUND + point+Color.RESET+" ");
+            }
+        System.out.print("\t");
+
+        for(String point : powerLvl){
+            System.out.print(Color.GREEN_BACKGROUND + point+Color.RESET+" ");
+        }
+        System.out.print("\t");
+
+        for(String point : manaPoints){
+            System.out.print(Color.BLUE_BACKGROUND + point+Color.RESET+" ");
+        }
+        System.out.print("\t\n");
+
+//        System.out.print(Color.RED_BACKGROUND + hitPoints.toString() + Color.RESET+"\t");
+ //       System.out.print( Color.GREEN_BACKGROUND+ powerLvl.toString() + Color.RESET+"\t");
+  //     System.out.print(Color.BLUE_BACKGROUND + manaPoints.toString() + Color.RESET);
     }
 
 }

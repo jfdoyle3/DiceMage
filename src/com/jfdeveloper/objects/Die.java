@@ -11,6 +11,11 @@ public class Die {
     private Random random=new Random(SEED);
 
 
+    public Die(){
+        faces=6;
+        faceUp=1;
+    }
+
     public Die (int faces){
         this.faces=faces;
         faceUp=1;

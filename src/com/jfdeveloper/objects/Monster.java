@@ -4,15 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Monster {
-    List<Die> den = new ArrayList<>();
+    List<Die> den;
 
-    public Monster(int dmgDie) {
+    public Monster() {
+        den = new ArrayList<>();
+    }
+
+    public void spawnMonster(int dmgDie) {
         den.add(new Die(dmgDie));
     }
 
     public void attack() {
-        // roll die.
-        den.get(0).roll();
+        for(int idx=0; idx<den.size(); idx++)
+            den.get(idx).roll();
+    }
+
+    public void attack(int idx) {
+            den.get(idx).roll();
     }
 
     @Override
