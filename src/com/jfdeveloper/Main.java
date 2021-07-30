@@ -26,32 +26,9 @@ public class Main {
 //
 //        Console.manaDice(diceSet);
 
-        Wizard wiz=new Wizard("Gandalf");
-
-        System.out.println(wiz.toString());
-
-        List<String> hp=new ArrayList<>();
-        List<String> mn=new ArrayList<>();
-        List<String> pl=new ArrayList<>();
-
-        String blip="  ";
-        for (int i=0; i<wiz.getHealth(); i++)
-            hp.add(blip);
-        for (int i=0; i<wiz.getMana(); i++)
-            mn.add(blip);
-        for (int i=0; i<wiz.getPowerLevel(); i++)
-            pl.add(blip);
 
 
-            Console.statusBar(hp,pl,mn);
-        System.out.println();
-        System.out.println();
-            mn.add(blip);
-        mn.add(blip);
-        mn.add(blip);
-        pl.remove(5);
 
-        Console.statusBar(hp,pl,mn);
 
 
     }
