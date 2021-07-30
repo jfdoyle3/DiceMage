@@ -1,18 +1,14 @@
 package com.jfdeveloper;
 
-import com.jfdeveloper.objects.Dice;
-import com.jfdeveloper.objects.Die;
-import com.jfdeveloper.objects.Monster;
-import com.jfdeveloper.objects.Wizard;
-import com.jfdeveloper.ui.Color;
-import com.jfdeveloper.ui.Console;
-
-import java.util.*;
+import com.jfdeveloper.game.Game;
 
 
 public class Main {
 
     public static void main(String[] args) {
+
+        Game game=new Game();
+        game.play();
 
 //       List<Die> diceSet= Dice.set(5,6);
 //        Monster monster=new Monster();

@@ -11,7 +11,7 @@ public class TreeMapImplementation {
    public static void create() {
         // Creating an empty TreeMap
         tree_map
-                = new TreeMap<Integer, String>();
+                = new TreeMap<>();
 
         System.out.println(
                 "TreeMap successfully"
@@ -26,7 +26,7 @@ public class TreeMapImplementation {
         tree_map.put(15, "4");
         tree_map.put(20, "Geeks");
         tree_map.put(25, "Welcomes");
-        tree_map.put(30, "You");
+        tree_map.put(5, "You");
 
         System.out.println(
                 "\nElements successfully"
