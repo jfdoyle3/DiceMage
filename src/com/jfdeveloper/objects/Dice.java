@@ -5,11 +5,13 @@ import com.jfdeveloper.objects.Die;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Dice {
     private static List<Die> diceSet;
+    private static TreeMap<Integer,Integer> groupDice;
 
     public static List<Die> set(int quantity, int faces) {
         diceSet = new ArrayList<>();
@@ -37,10 +39,9 @@ public class Dice {
         return diceList;
     }
 
-    public static Map<Integer,Long> groupDice(List<Integer> dice) {
+    public static Map<Integer,Long> group(List<Integer> dice) {
         Map<Integer, Long> freq = dice.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println("freq:: " + freq);
-        
         return freq;
     }
 
