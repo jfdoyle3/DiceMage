@@ -1,13 +1,13 @@
 package com.jfdeveloper.ui;
 
-import com.jfdeveloper.objects.Die;
+import com.jfdeveloper.dice.Die;
 
 import java.util.List;
 
-public class ColorConsole {
+public class ColorConsole implements Console {
 
 
-    public static void manaDice(List<Die> dice) {
+    public void manaDice(List<Die> dice) {
         for(Die die : dice)
         System.out.print(Color.BLUE + "["+die.getFaceUp()+"] " + Color.RESET);
 

@@ -1,12 +1,14 @@
 package com.jfdeveloper.objects;
 
+import com.jfdeveloper.dice.Cup;
+
 public class Wizard {
 
     private String name;
     private int health;
     private int mana;
     private int powerLevel;
-    private Cup cup = new Cup();
+    private Cup cup;
 
 
     public Wizard(String name) {

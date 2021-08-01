@@ -1,4 +1,4 @@
-package com.jfdeveloper.objects;
+package com.jfdeveloper.dice;
 
 
 import java.util.Random;

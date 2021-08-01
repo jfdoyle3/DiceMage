@@ -11,13 +11,17 @@ public class Game {
     public Game() {
 //        System.out.println("How many Wizards?");
 //        int wizards = Input.inputNumber();
-        for (int i = 0; i < wizards; i++) {
-            System.out.println("What is your name?");
-            wiz = new Wizard((Input.inputString()).trim());
-        }
+//        for (int i = 0; i < wizards; i++) {
+//            System.out.println("What is your name?");
+//            wiz = new Wizard((Input.inputString()).trim());
+             wiz=new Wizard("Gandolf");
+ //       }
     }
 
     public void play(){
+
+        wiz.getCup().roll();
+        System.out.println(wiz.getCup().displayCup());
 
     }
 

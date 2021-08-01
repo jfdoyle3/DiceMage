@@ -1,5 +1,7 @@
 package com.jfdeveloper.objects;
 
+import com.jfdeveloper.dice.Die;
+
 import java.util.ArrayList;
 import java.util.List;
 
