@@ -9,6 +9,7 @@ public class Wizard {
     private int mana;
     private int powerLevel;
     private Cup cup;
+    private Monster monster;
 
 
     public Wizard(String name) {
@@ -17,6 +18,7 @@ public class Wizard {
         health = 5;
         powerLevel=6;
         mana = 1;
+        monster=new Monster();
     }
 
 
@@ -48,6 +50,10 @@ public class Wizard {
         return cup;
     }
 
+    public Monster getMonster() {
+        return monster;
+    }
+
     @Override
     public String toString() {
         return "Wizard{" +
@@ -56,6 +62,7 @@ public class Wizard {
                 ", mana=" + mana +
                 ", powerLevel=" + powerLevel +
                 ", cup=" + cup +
+                ", monster=" + monster +
                 '}';
     }
 }

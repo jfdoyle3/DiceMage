@@ -8,7 +8,7 @@ public class Die {
     private final long SEED= System.currentTimeMillis();
     private int faces;
     private int faceUp;
-    private Random random=new Random(SEED);
+    private Random random=new Random();
 
 
     public Die(){
@@ -28,9 +28,6 @@ public class Die {
     public int getFaceUp(){
         return faceUp;
     }
-
-    public int getFaces(){return faces;}
-
 
     @Override
     public String toString() {
