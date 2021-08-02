@@ -1,4 +1,4 @@
-package com.jfdeveloper.objects;
+package com.jfdeveloper.actors;
 
 import com.jfdeveloper.dice.Die;
 

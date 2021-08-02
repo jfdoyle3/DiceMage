@@ -11,11 +11,22 @@ public class Cup {
             dice.add(new Die());
         }
     }
+    public Cup(int number) {
+        while(dice.size() < number) {
+            dice.add(new Die());
+        }
+    }
 
     public void roll() {
         for (Die die : dice) {
             die.roll();
         }
+    }
+
+    public void addDice(int die){
+        for(int i=0; i<die; i++)
+            dice.add(new Die());
+
     }
 
     public void roll(int selection) {

@@ -7,4 +7,6 @@ import java.util.List;
 public interface Console {
 
     void manaDice(List<Die> dice);
+
+    void statusBar(int health, int power, int mana);
 }

@@ -13,6 +13,10 @@ public class ColorConsole implements Console {
 
     }
 
+    public void statusBar(int health, int power, int mana) {
+        System.out.printf("Health: %d\tPower level: %d\tMana: %d", health, power, mana);
+    }
+
     public static void statusBar(List<String> hitPoints, List<String> powerLvl,List<String> manaPoints) {
             for(String point : hitPoints){
                 System.out.print(Color.RED_BACKGROUND + point+Color.RESET+" ");

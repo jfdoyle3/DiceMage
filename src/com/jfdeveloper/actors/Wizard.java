@@ -1,6 +1,8 @@
-package com.jfdeveloper.objects;
+package com.jfdeveloper.actors;
 
+import com.jfdeveloper.actors.Monster;
 import com.jfdeveloper.dice.Cup;
+import com.jfdeveloper.dice.Die;
 
 public class Wizard {
 
@@ -14,9 +16,10 @@ public class Wizard {
 
     public Wizard(String name) {
         this.name = name;
-        cup = new Cup();
+
         health = 5;
         powerLevel=6;
+        cup = new Cup(6);
         mana = 1;
         monster=new Monster();
     }
@@ -52,6 +55,25 @@ public class Wizard {
 
     public Monster getMonster() {
         return monster;
+    }
+
+    public void spawnMonster(int cost, int dmgDie) {
+        mana-=cost;
+        monster.den.add(new Die(dmgDie));
+    }
+
+    public void addMana(){
+        mana++;
+    }
+
+    public void incPower(){
+        mana-=3;
+        powerLevel++;
+        cup.addDice(1);
+    }
+
+    public void addPower(){
+        powerLevel++;
     }
 
     @Override
