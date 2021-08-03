@@ -26,7 +26,6 @@ public class Cup {
     public void addDice(int die){
         for(int i=0; i<die; i++)
             dice.add(new Die());
-
     }
 
     public void roll(int selection) {

@@ -4,7 +4,7 @@ import com.jfdeveloper.dice.Die;
 
 import java.util.List;
 
-public class MonoConsole implements Console {
+public class Mono_Console implements Console {
 
     public void statusBar(int health, int power, int mana) {
         System.out.printf("Health: %d\tPower level: %d\tMana: %d", health, power, mana);

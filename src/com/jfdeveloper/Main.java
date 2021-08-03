@@ -1,14 +1,17 @@
 package com.jfdeveloper;
 
+import com.jfdeveloper.dice.Die;
 import com.jfdeveloper.game.Game;
+import com.jfdeveloper.ui.Input;
 
 
 public class Main {
 
     public static void main(String[] args) {
-
+//
         Game game=new Game();
         game.play();
+
 
 //       List<Die> diceSet= Dice.set(5,6);
 //        Monster monster=new Monster();

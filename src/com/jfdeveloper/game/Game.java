@@ -1,6 +1,9 @@
 package com.jfdeveloper.game;
 
 import com.jfdeveloper.actors.Wizard;
+import com.jfdeveloper.ui.ColorConsole;
+import com.jfdeveloper.ui.Console;
+import com.jfdeveloper.ui.Mono_Console;
 
 
 public class Game {
@@ -20,7 +23,7 @@ public class Game {
 
     public void play(){
 
-
+        Console console=new Mono_Console();
         wiz.getCup().roll();
         System.out.println(wiz.getCup().displayCup());
 

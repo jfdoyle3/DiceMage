@@ -72,10 +72,6 @@ public class Wizard {
         cup.addDice(1);
     }
 
-    public void addPower(){
-        powerLevel++;
-    }
-
     @Override
     public String toString() {
         return "Wizard{" +
