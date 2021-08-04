@@ -7,11 +7,14 @@ import com.jfdeveloper.ui.Input;
 
 public class Main {
 
-    public static void main(String[] args) {
-//
-        Game game=new Game();
-        game.play();
 
+
+    public static void main(String[] args) {
+        String BLUE_BOLD="\033[1;34m";
+//        Game game=new Game();
+//        game.play();
+        System.out.println(BLUE_BOLD);
+        System.out.println("Boo!!!");
 
 //       List<Die> diceSet= Dice.set(5,6);
 //        Monster monster=new Monster();

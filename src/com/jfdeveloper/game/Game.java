@@ -26,9 +26,15 @@ public class Game {
         Console console=new Mono_Console();
         wiz.getCup().roll();
         System.out.println(wiz.getCup().displayCup());
+        console.statusBar(wiz.getName(),wiz.getHealth(),wiz.getPowerLevel(),wiz.getMana());
 
-        System.out.println(wiz.toString());
 
+
+  //      System.out.println(wiz.toString());
+
+        wiz.addMana();
+        wiz.addMana();
+        wiz.addMana();
         wiz.addMana();
         wiz.addMana();
         wiz.addMana();
@@ -36,16 +42,18 @@ public class Game {
 
         wiz.getCup().roll();
         System.out.println(wiz.getCup().displayCup());
+        console.statusBar(wiz.getName(),wiz.getHealth(),wiz.getPowerLevel(),wiz.getMana());
+
 
         System.out.println(wiz.toString());
 
         wiz.incPower();
         wiz.spawnMonster(3,3);
 
-        wiz.getCup().roll();
-        System.out.println(wiz.getCup().displayCup());
-
-        System.out.println(wiz.toString());
+//        wiz.getCup().roll();
+//        System.out.println(wiz.getCup().displayCup());
+//
+//        System.out.println(wiz.toString());
     }
 
 }

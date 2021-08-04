@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Mono_Console implements Console {
 
-    public void statusBar(int health, int power, int mana) {
-        System.out.printf("Health: %d\tPower level: %d\tMana: %d", health, power, mana);
+    public void statusBar(String name, int health, int power, int mana) {
+        System.out.printf("Wizard: %s\nHealth: %d\tPower level: %d\tMana: %d\n", name,health, power, mana);
     }
 
     public void manaDice(List<Die> dice) {
