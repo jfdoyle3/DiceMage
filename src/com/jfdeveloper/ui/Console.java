@@ -1,6 +1,7 @@
 package com.jfdeveloper.ui;
 
 import com.jfdeveloper.actors.Monster;
+import com.jfdeveloper.actors.Wizard;
 import com.jfdeveloper.dice.Die;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface Console {
     void statusBar(String name, int health, int power, int mana);
 
     int wizardChoice(int mana);
+
+    void wizardsStatus(List<Wizard> wizards);
 }

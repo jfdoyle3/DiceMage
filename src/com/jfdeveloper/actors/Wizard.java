@@ -1,10 +1,7 @@
 package com.jfdeveloper.actors;
 
-import com.jfdeveloper.actors.Monster;
 import com.jfdeveloper.dice.Cup;
 import com.jfdeveloper.dice.Die;
-import com.jfdeveloper.ui.Color;
-import com.jfdeveloper.ui.Dbug;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +57,11 @@ public class Wizard {
 
     public Monster getMonster() {
         return monster;
+    }
+
+    public int setHealth(int health) {
+        this.health = health;
+        return health;
     }
 
     public void spawnMonster(int cost, int dmgDie) {

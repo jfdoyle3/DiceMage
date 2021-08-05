@@ -12,8 +12,7 @@ public class Dbug {
     }
 }
 
-
-//    RESET("\033[0m"),
+// Color Choices:
 //    RED("\033[0;31m"),      // RED
 //    GREEN("\033[0;32m"),    // GREEN
 //    YELLOW("\033[0;33m"),   // YELLOW

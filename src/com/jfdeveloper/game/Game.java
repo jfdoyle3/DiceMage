@@ -6,60 +6,38 @@ import com.jfdeveloper.dice.Die;
 import com.jfdeveloper.ui.BWConsole;
 import com.jfdeveloper.ui.Console;
 import com.jfdeveloper.ui.Dbug;
+import com.jfdeveloper.ui.Input;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class Game<choiceDecision> {
+public class Game{
 
     private Wizard wiz;
-    private int wizards = 2;
+//    private int wizards = 2;
     private Console console = new BWConsole();
     private int choice;
     private boolean turn;
+    private List<Wizard> wizards=new ArrayList<>();
 
 
     public Game() {
-//        System.out.println("How many Wizards?");
-//        int wizards = Input.inputNumber();
-//        for (int i = 0; i < wizards; i++) {
-//            System.out.println("What is your name?");
-//            wiz = new Wizard((Input.inputString()).trim());
-        wiz = new Wizard("Gandalf");
-        //       }
+        System.out.println("How many Wizards?");
+        int players = Input.inputNumber();
+        for (int i = 0; i < players; i++) {
+            System.out.println("What is your name?");
+            wizards.add(new Wizard((Input.inputString()).trim()));
+        }
     }
 
     public void play() {
 
-
-        wiz.addMana();
-        wiz.addMana();
-        wiz.addMana();
-        wiz.addMana();
-        wiz.getCup().roll();
-        System.out.println(wiz.getCup().displayCup());
-        console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana());
-        while(true) {
-            int choice = console.wizardChoice(wiz.getMana());
-            boolean turn=choiceDecision(choice);
-            if (!turn)
-                break;
-        }
-
-
+        Turn turn=new Turn();
+        turn.turn(wizards);
+        System.out.println("game over");
 
     }
 
-    public boolean choiceDecision(int choice) {
-        boolean turn=true;
-        switch (choice) {
-            case 1 -> wiz.incPower();
-            case 2 -> wiz.spawnMonster(3, 3);
-            case 3 -> console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana());
-            case 4 -> turn = false;
-            default -> System.out.println("Invalid Move");
-        }
-        return turn;
-    }
 
 }

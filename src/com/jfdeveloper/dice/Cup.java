@@ -2,9 +2,11 @@ package com.jfdeveloper.dice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeMap;
 
 public class Cup {
-    List<Die> dice = new ArrayList<>();
+    private static List<Die> dice = new ArrayList<>();
+    private static TreeMap<Integer, Integer> groupDice;
 
     public Cup() {
         while(dice.size() < 5) {
@@ -55,6 +57,17 @@ public class Cup {
         }
 
         return selections;
+    }
+
+    public static TreeMap<Integer, Integer> group() {
+        for (Die die : dice) {
+            if (!groupDice.containsKey(die))
+                groupDice.put(die.getFaceUp(), 0);
+
+            groupDice.put(die.getFaceUp(), groupDice.get(die) + 1);
+        }
+
+        return groupDice;
     }
 
 }

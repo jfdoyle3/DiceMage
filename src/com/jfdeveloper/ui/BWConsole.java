@@ -1,6 +1,7 @@
 package com.jfdeveloper.ui;
 
 import com.jfdeveloper.actors.Monster;
+import com.jfdeveloper.actors.Wizard;
 import com.jfdeveloper.dice.Die;
 
 import java.util.ArrayList;
@@ -11,6 +12,11 @@ public class BWConsole implements Console {
 
     public void statusBar(String name, int health, int power, int mana) {
         System.out.printf("Wizard: %s\nHealth: %d\tPower level: %d\tMana: %d\n", name, health, power, mana);
+    }
+
+    public void wizardsStatus(List<Wizard> wizards) {
+        for(Wizard wizard : wizards)
+            System.out.printf("Wizard: %s\nHealth: %d\tPower level: %d\tMana: %d\n", wizard.getName(),wizard.getHealth(),wizard.getPowerLevel(),wizard.getMana());
     }
 
     public void manaDice(List<Die> dice) {
