@@ -9,31 +9,38 @@ import java.util.List;
 public class ColorConsole implements Console {
 
 
-    public void manaDice(List<Die> dice) {
+    public void Dice(List<Die> dice) {
         for(Die die : dice)
         System.out.print(Color.BLUE + "["+die.getFaceUp()+"] " + Color.RESET);
 
     }
 //
-//    public static void dice(List<Die> list) {
-//  //      Collections.sort(list, Die::compareTo);
-//        System.out.println(Color.BLUE);
-//        StringBuilder dice = new StringBuilder();
-//        StringBuilder part1 = new StringBuilder();
-//        StringBuilder part2 = new StringBuilder();
-//        StringBuilder part3 = new StringBuilder();
-//        for (int i = 0; i < list.size(); i++) {
-//            part1.append("/¯¯¯\\");
-//            part2.append("| ").append(list.get(i).value).append(" |");
-//            part3.append("\\___/");
-//        }
-//        part1.append("\n");
-//        part2.append("\n");
-//        part3.append("\n");
-//        dice.append(part1).append(part2).append(part3);
-//        System.out.println(dice);
-//        System.out.println(Color.RESET);
-//    }
+    public void manaDice(List<Die> list) {
+  //      Collections.sort(list, Die::compareTo);
+        System.out.println(Color.BLUE);
+        StringBuilder dice = new StringBuilder();
+        StringBuilder part1 = new StringBuilder();
+        StringBuilder part2 = new StringBuilder();
+        StringBuilder part3 = new StringBuilder();
+        for (int i = 0; i < list.size(); i++) {
+            part1.append(Color.BLUE_BACKGROUND).append("     ")
+                    .append(Color.RESET).append(" ");
+
+            part2.append(Color.BLUE_BACKGROUND).append("  ")
+                    .append(Color.WHITE_BOLD_BRIGHT).append(list.get(i).getFaceUp())
+                    .append(Color.BLUE_BACKGROUND).append("  ")
+                    .append(Color.RESET).append(" ");
+
+            part3.append(Color.BLUE_BACKGROUND).append("     ")
+                    .append(Color.RESET).append(" ");
+        }
+        part1.append("\n");
+        part2.append("\n");
+        part3.append("\n");
+        dice.append(part1).append(part2).append(part3);
+        System.out.println(dice);
+        System.out.println(Color.RESET);
+    }
 
 //    public void statusBar(String name,int health, int power, int mana) {
 //        System.out.printf("Name: %s\nHealth: %d\tPower level: %d\tMana: %d\n",name, health, power, mana);
