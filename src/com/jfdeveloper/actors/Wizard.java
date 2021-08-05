@@ -3,6 +3,11 @@ package com.jfdeveloper.actors;
 import com.jfdeveloper.actors.Monster;
 import com.jfdeveloper.dice.Cup;
 import com.jfdeveloper.dice.Die;
+import com.jfdeveloper.ui.Color;
+import com.jfdeveloper.ui.Dbug;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Wizard {
 
@@ -12,16 +17,16 @@ public class Wizard {
     private int powerLevel;
     private Cup cup;
     private Monster monster;
+    private List<Die> den;
 
 
     public Wizard(String name) {
         this.name = name;
-
         health = 5;
         powerLevel=6;
         cup = new Cup(6);
         mana = 1;
-        monster=new Monster();
+        den=new ArrayList<>();
     }
 
 
@@ -71,6 +76,8 @@ public class Wizard {
         powerLevel++;
         cup.addDice(1);
     }
+
+
 
     @Override
     public String toString() {

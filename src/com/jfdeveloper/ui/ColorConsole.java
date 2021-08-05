@@ -1,5 +1,7 @@
 package com.jfdeveloper.ui;
 
+import com.jfdeveloper.actors.Monster;
+import com.jfdeveloper.dice.Dice;
 import com.jfdeveloper.dice.Die;
 
 
@@ -14,20 +16,20 @@ public class ColorConsole implements Console {
         System.out.print(Color.BLUE + "["+die.getFaceUp()+"] " + Color.RESET);
 
     }
-//
+
     public void manaDice(List<Die> list) {
-  //      Collections.sort(list, Die::compareTo);
+      //  Collections.sort(list, Dice::group());
         System.out.println(Color.BLUE);
         StringBuilder dice = new StringBuilder();
         StringBuilder part1 = new StringBuilder();
         StringBuilder part2 = new StringBuilder();
         StringBuilder part3 = new StringBuilder();
-        for (int i = 0; i < list.size(); i++) {
+        for (Die die : list) {
             part1.append(Color.BLUE_BACKGROUND).append("     ")
                     .append(Color.RESET).append(" ");
 
             part2.append(Color.BLUE_BACKGROUND).append("  ")
-                    .append(Color.WHITE_BOLD_BRIGHT).append(list.get(i).getFaceUp())
+                    .append(Color.WHITE_BOLD_BRIGHT).append(die.getFaceUp())
                     .append(Color.BLUE_BACKGROUND).append("  ")
                     .append(Color.RESET).append(" ");
 
@@ -42,7 +44,7 @@ public class ColorConsole implements Console {
         System.out.println(Color.RESET);
     }
 
-//    public void statusBar(String name,int health, int power, int mana) {
+//    public void statusBar(String name,int health, int power, int mana, Lis) {
 //        System.out.printf("Name: %s\nHealth: %d\tPower level: %d\tMana: %d\n",name, health, power, mana);
 //    }
 
@@ -62,11 +64,14 @@ public class ColorConsole implements Console {
             System.out.print(Color.BLUE_BACKGROUND + " "+Color.RESET+" ");
 
         System.out.print("\t\n");
-
-//        System.out.print(Color.RED_BACKGROUND + hitPoints.toString() + Color.RESET+"\t");
- //       System.out.print( Color.GREEN_BACKGROUND+ powerLvl.toString() + Color.RESET+"\t");
-  //     System.out.print(Color.BLUE_BACKGROUND + manaPoints.toString() + Color.RESET);
     }
+
+    @Override
+    public int wizardChoice(int mana) {
+        return 0;
+    }
+
+    public void wizardChoice(){}
 
 }
 

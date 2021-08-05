@@ -5,14 +5,18 @@ import com.jfdeveloper.dice.Dice;
 import com.jfdeveloper.dice.Die;
 import com.jfdeveloper.ui.BWConsole;
 import com.jfdeveloper.ui.Console;
+import com.jfdeveloper.ui.Dbug;
 
 import java.util.List;
 
 
-public class Game {
+public class Game<choiceDecision> {
 
     private Wizard wiz;
     private int wizards = 2;
+    private Console console = new BWConsole();
+    private int choice;
+    private boolean turn;
 
 
     public Game() {
@@ -21,49 +25,41 @@ public class Game {
 //        for (int i = 0; i < wizards; i++) {
 //            System.out.println("What is your name?");
 //            wiz = new Wizard((Input.inputString()).trim());
-             wiz=new Wizard("Gandalf");
- //       }
+        wiz = new Wizard("Gandalf");
+        //       }
     }
 
-    public void play(){
-
-        Console console=new BWConsole();
-//        wiz.getCup().roll();
-//        System.out.println(wiz.getCup().displayCup());
-//        console.statusBar(wiz.getName(),wiz.getHealth(),wiz.getPowerLevel(),wiz.getMana());
+    public void play() {
 
 
+        wiz.addMana();
+        wiz.addMana();
+        wiz.addMana();
+        wiz.addMana();
         wiz.getCup().roll();
-        List<Die> dice=Dice.set(6,6);
-        Dice.rollDice(dice);
-        console.manaDice(dice);
+        System.out.println(wiz.getCup().displayCup());
+        console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana());
+        while(true) {
+            int choice = console.wizardChoice(wiz.getMana());
+            boolean turn=choiceDecision(choice);
+            if (!turn)
+                break;
+        }
 
 
 
-  //      System.out.println(wiz.toString());
+    }
 
-//        wiz.addMana();
-//        wiz.addMana();
-//        wiz.addMana();
-//        wiz.addMana();
-//        wiz.addMana();
-//        wiz.addMana();
-//        wiz.addMana();
-//
-//        wiz.getCup().roll();
-//        System.out.println(wiz.getCup().displayCup());
-//        console.statusBar(wiz.getName(),wiz.getHealth(),wiz.getPowerLevel(),wiz.getMana());
-//
-//
-//        System.out.println(wiz.toString());
-//
-//        wiz.incPower();
-//        wiz.spawnMonster(3,3);
-
-//        wiz.getCup().roll();
-//        System.out.println(wiz.getCup().displayCup());
-//
-//        System.out.println(wiz.toString());
+    public boolean choiceDecision(int choice) {
+        boolean turn=true;
+        switch (choice) {
+            case 1 -> wiz.incPower();
+            case 2 -> wiz.spawnMonster(3, 3);
+            case 3 -> console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana());
+            case 4 -> turn = false;
+            default -> System.out.println("Invalid Move");
+        }
+        return turn;
     }
 
 }
