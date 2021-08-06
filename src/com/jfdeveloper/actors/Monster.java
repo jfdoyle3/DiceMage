@@ -1,6 +1,7 @@
 package com.jfdeveloper.actors;
 
 import com.jfdeveloper.dice.Die;
+import com.jfdeveloper.objects.Den;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +9,19 @@ import java.util.List;
 public class Monster {
     private Die monster;
 
+
     public Monster(int monster) {
         this.monster=new Die(monster);
+    }
+
+
+
+    public void attack() {
+        this.monster.roll();
+    }
+
+    public Die getMonster() {
+        return monster;
     }
 
     @Override

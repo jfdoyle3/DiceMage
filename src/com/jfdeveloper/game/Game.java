@@ -48,7 +48,8 @@ public class Game{
     public void testWiz(){
         Wizard g=new Wizard("G");
         Dbug.dbug("wiz: ",g);
-        g.getDen().spawnMonster(3);
+        g.getDen().spawnMonster(20);
+        g.getDen().monsterAttack();
 
         Dbug.dbug("wiz: ",g);
 

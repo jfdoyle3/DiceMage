@@ -22,7 +22,10 @@ public class Den{
         den.add(new Monster(dmgDie));
     }
 
-
+    public void monsterAttack(){
+        Monster mon=den.get(0);
+        mon.attack();
+    }
 
 
     @Override
