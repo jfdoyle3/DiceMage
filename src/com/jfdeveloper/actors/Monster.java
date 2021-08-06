@@ -6,29 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Monster {
-    List<Die> den;
+    private Die monster;
 
-    public Monster() {
-        den = new ArrayList<>();
-    }
-
-    public void spawnMonster(int dmgDie) {
-        den.add(new Die(dmgDie));
-    }
-
-    public void attack() {
-        for(int idx=0; idx<den.size(); idx++)
-            den.get(idx).roll();
-    }
-
-    public void attack(int idx) {
-            den.get(idx).roll();
+    public Monster(int monster) {
+        this.monster=new Die(monster);
     }
 
     @Override
     public String toString() {
         return "Monster{" +
-                "den=" + den +
+                "monster=" + monster +
                 '}';
     }
 }

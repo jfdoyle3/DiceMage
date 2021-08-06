@@ -6,6 +6,8 @@ import com.jfdeveloper.dice.Dice;
 import com.jfdeveloper.dice.Die;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -74,7 +76,16 @@ public class ColorConsole implements Console {
 
     @Override
     public int wizardChoice(int mana) {
-        return 0;
+        List<String> choices = new ArrayList<>(Arrays.asList("Increase Power Level", "Spawn Monster", "Check Status", "End Turn"));
+        System.out.println();
+        int idx = 0;
+        if (mana < 3)
+            idx = 2;
+        for (int i = idx; i < choices.size(); i++)
+            System.out.printf("%d) %s\n", i + 1, choices.get(i));
+
+        System.out.println("What say you?");
+        return Input.inputNumber();
     }
 
     @Override

@@ -2,19 +2,20 @@ package com.jfdeveloper.actors;
 
 import com.jfdeveloper.dice.Cup;
 import com.jfdeveloper.dice.Die;
+import com.jfdeveloper.objects.Den;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Wizard {
 
+    public Den den;
     private String name;
     private int health;
     private int mana;
     private int powerLevel;
     private Cup cup;
     private Monster monster;
-    private List<Die> den;
 
 
     public Wizard(String name) {
@@ -23,7 +24,7 @@ public class Wizard {
         powerLevel=6;
         cup = new Cup(6);
         mana = 1;
-        den=new ArrayList<>();
+        den=new Den();
     }
 
 
@@ -64,11 +65,12 @@ public class Wizard {
         return health;
     }
 
-    //TODO: expand this method
-    public void spawnMonster(int cost, int dmgDie) {
-        mana-=cost;
-        monster.den.add(new Die(dmgDie));
+    public Den getDen() {
+        return den;
     }
+
+
+
 
     public void addMana(){
         mana++;
@@ -81,7 +83,6 @@ public class Wizard {
     }
 
 
-
     @Override
     public String toString() {
         return "Wizard{" +
@@ -91,6 +92,9 @@ public class Wizard {
                 ", powerLevel=" + powerLevel +
                 ", cup=" + cup +
                 ", monster=" + monster +
+                ", den=" + den +
                 '}';
     }
+
+ 
 }

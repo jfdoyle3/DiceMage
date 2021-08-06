@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public class Cup {
     private static List<Die> dice = new ArrayList<>();
     private static TreeMap<Integer, Integer> groupDice;
-
+    // TODO: fix dice
     public Cup() {
         while(dice.size() < 5) {
             dice.add(new Die());

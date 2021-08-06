@@ -3,7 +3,7 @@ package com.jfdeveloper.dice;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
-
+// TODO: fix dice
 public class Dice {
     private static List<Die> diceSet;
     private static TreeMap<Integer, Integer> groupDice;

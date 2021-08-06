@@ -23,6 +23,20 @@ public class Game{
 
 
     public Game() {
+
+        // TODO: fix dice
+     //   initWizards();
+    }
+
+    public void play() {
+
+        Turn turn=new Turn();
+        turn.turn(wizards);
+        System.out.println("game over");
+
+    }
+
+    private void initWizards() {
         System.out.println("How many Wizards?");
         int players = Input.inputNumber();
         for (int i = 0; i < players; i++) {
@@ -31,11 +45,12 @@ public class Game{
         }
     }
 
-    public void play() {
+    public void testWiz(){
+        Wizard g=new Wizard("G");
+        Dbug.dbug("wiz: ",g);
+        g.getDen().spawnMonster(3);
 
-        Turn turn=new Turn();
-        turn.turn(wizards);
-        System.out.println("game over");
+        Dbug.dbug("wiz: ",g);
 
     }
 }
