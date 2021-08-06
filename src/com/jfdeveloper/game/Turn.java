@@ -3,6 +3,7 @@ package com.jfdeveloper.game;
 import com.jfdeveloper.actors.Wizard;
 import com.jfdeveloper.dice.Cup;
 import com.jfdeveloper.ui.BWConsole;
+import com.jfdeveloper.ui.ColorConsole;
 import com.jfdeveloper.ui.Console;
 
 
@@ -11,7 +12,7 @@ import java.util.List;
 public class Turn {
     
     private Wizard wiz;
-    private Console console = new BWConsole();
+    private Console console = new ColorConsole();
     // private List<Wizard> wizards;
 
     public void turn(List<Wizard> wizards) {
@@ -25,7 +26,7 @@ public class Turn {
                 break;
             wiz.addMana();
             wiz.getCup().roll();
-            Cup.group();
+
             System.out.println(wiz.getCup().displayCup());
             console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana());
             while (true) {
@@ -44,7 +45,7 @@ public class Turn {
         boolean turn = true;
         switch (choice) {
             case 1 -> wizards.get(wizNum).incPower();
-            case 2 -> wizards.get(wizNum).spawnMonster(3, 3);
+            case 2 -> wizards.get(wizNum).spawnMonster(3,3);
             case 3 -> console.wizardsStatus(wizards);
             case 4 -> turn = false;
             default -> System.out.println("Invalid Move");

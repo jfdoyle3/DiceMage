@@ -38,6 +38,4 @@ public class Game{
         System.out.println("game over");
 
     }
-
-
 }

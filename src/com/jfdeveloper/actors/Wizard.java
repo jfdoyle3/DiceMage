@@ -64,6 +64,7 @@ public class Wizard {
         return health;
     }
 
+    //TODO: expand this method
     public void spawnMonster(int cost, int dmgDie) {
         mana-=cost;
         monster.den.add(new Die(dmgDie));
