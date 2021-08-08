@@ -15,7 +15,9 @@ player can use mana to summon monsters
     default: 3 + dieValue + number of monsters
             (min: 6 mana: 1d3 and max: 1d10 for 13 mana)
             (min: 6 = m:3 + m:1d3+0)
-            (
+
+            3+3+1=7
+            mana = mana+monDice+den.size();
 
 
 If player has creatures they may attack

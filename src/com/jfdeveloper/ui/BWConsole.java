@@ -36,4 +36,12 @@ public class BWConsole implements Console {
         System.out.println("What say you?");
         return Input.inputNumber();
     }
+
+    public void buyMonster(int mana, int dieSize,int denSize){
+        System.out.println("Buy Monster: ");
+        int price=mana+dieSize+denSize;
+        int minPrice=6;
+        System.out.println("you can get die: "+minPrice+" - "+price);
+    }
 }
+

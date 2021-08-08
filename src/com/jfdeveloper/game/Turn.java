@@ -39,6 +39,8 @@ public class Turn {
             if (wizIdxTurn == wizardRosterSize)
                 wizIdxTurn = 0;
         }
+
+
     }
 
     private boolean choiceDecision(List<Wizard> wizards,int wizNum, int choice) {

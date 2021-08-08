@@ -79,6 +79,9 @@ public class Wizard {
         cup.addDice(1);
     }
 
+    public void freqAddMana(int freqTreeMap){
+         mana=freqTreeMap-2;
+    }
 
     @Override
     public String toString() {
