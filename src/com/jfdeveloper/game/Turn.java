@@ -27,8 +27,7 @@ public class Turn {
                 break;
             wiz.addMana();
             wiz.getCup().roll();
-
-            System.out.println(wiz.getCup().displayCup());
+           // System.out.println(wiz.getCup().displayCup());
             console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana());
             while (true) {
                 int choice = console.wizardChoice(wiz.getMana());
@@ -42,7 +41,7 @@ public class Turn {
         }
     }
 
-    public boolean choiceDecision(List<Wizard> wizards,int wizNum, int choice) {
+    private boolean choiceDecision(List<Wizard> wizards,int wizNum, int choice) {
         boolean turn = true;
         switch (choice) {
             case 1 -> wizards.get(wizNum).incPower();
@@ -52,5 +51,11 @@ public class Turn {
             default -> System.out.println("Invalid Move");
         }
         return turn;
+    }
+
+    private void buyMonster(List<Wizard> wizards,int wizNum){
+
+
+        wizards.get(wizNum).getDen().spawnMonster(20);
     }
 }

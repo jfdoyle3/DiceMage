@@ -1,7 +1,10 @@
 package com.jfdeveloper.dice;
 
+import com.jfdeveloper.ui.Dbug;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 // TODO: fix dice
 public class Dice {
@@ -41,7 +44,12 @@ public class Dice {
 
             groupDice.put(die, groupDice.get(die) + 1);
         }
-
+        for(Map.Entry<Integer,Integer> entry : groupDice.entrySet()){
+            int key=entry.getKey();
+            int value=entry.getValue();
+            Dbug.dbug("key: ",key);
+            Dbug.dbug("value: ", value);
+            }
         return groupDice;
     }
 

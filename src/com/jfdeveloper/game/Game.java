@@ -24,8 +24,8 @@ public class Game{
 
     public Game() {
 
-        // TODO: fix dice
-     //   initWizards();
+      //  TODO: fix dice
+       initWizards();
     }
 
     public void play() {
@@ -49,7 +49,6 @@ public class Game{
         Wizard g=new Wizard("G");
         Dbug.dbug("wiz: ",g);
         g.getDen().spawnMonster(20);
-        g.getDen().monsterAttack();
 
         Dbug.dbug("wiz: ",g);
 

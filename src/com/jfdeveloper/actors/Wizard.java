@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Wizard {
 
-    public Den den;
+    private Den den;
     private String name;
     private int health;
     private int mana;
@@ -68,9 +68,6 @@ public class Wizard {
     public Den getDen() {
         return den;
     }
-
-
-
 
     public void addMana(){
         mana++;

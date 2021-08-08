@@ -1,7 +1,11 @@
 package com.jfdeveloper.dice;
 
+import com.jfdeveloper.ui.Dbug;
+
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Cup {
@@ -55,19 +59,23 @@ public class Cup {
         for (String number : inputArr) {
             selections.add(Integer.parseInt(number) - 1);
         }
-
         return selections;
     }
 
-    public static TreeMap<Integer, Integer> group() {
-        for (Die die : dice) {
+    public void groupDisplay(List<Die> dice2) {
+        for (Die die : dice2) {
             if (!groupDice.containsKey(die))
                 groupDice.put(die.getFaceUp(), 0);
 
             groupDice.put(die.getFaceUp(), groupDice.get(die) + 1);
         }
 
-        return groupDice;
+        for(Map.Entry<Integer,Integer> entry : groupDice.entrySet()){
+            int key=entry.getKey();
+            int value=entry.getValue();
+            Dbug.dbug("key: ",key);
+            Dbug.dbug("value: ", value);
+        }
     }
 
 }

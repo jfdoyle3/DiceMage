@@ -13,6 +13,10 @@ player can use mana to power up and purchase more dice
 
 player can use mana to summon monsters
     default: 3 + dieValue + number of monsters
+            (min: 6 mana: 1d3 and max: 1d10 for 13 mana)
+            (min: 6 = m:3 + m:1d3+0)
+            (
+
 
 If player has creatures they may attack
 

@@ -17,7 +17,7 @@ public class Monster {
 
 
     public void attack() {
-        this.monster.roll();
+        monster.roll();
     }
 
     public Die getMonster() {
