@@ -93,6 +93,11 @@ public class ColorConsole implements Console {
 
     }
 
+    @Override
+    public void buyMonster(int mana, int denSize) {
+
+    }
+
 }
 
 

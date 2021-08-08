@@ -15,4 +15,6 @@ public interface Console {
     int wizardChoice(int mana);
 
     void wizardsStatus(List<Wizard> wizards);
+
+     void buyMonster(int mana,int denSize);
 }

@@ -15,7 +15,6 @@ public class Wizard {
     private int mana;
     private int powerLevel;
     private Cup cup;
-    private Monster monster;
 
 
     public Wizard(String name) {
@@ -56,10 +55,7 @@ public class Wizard {
         return cup;
     }
 
-    public Monster getMonster() {
-        return monster;
-    }
-
+    // TODO: Remove
     public int setHealth(int health) {
         this.health = health;
         return health;
@@ -91,7 +87,6 @@ public class Wizard {
                 ", mana=" + mana +
                 ", powerLevel=" + powerLevel +
                 ", cup=" + cup +
-                ", monster=" + monster +
                 ", den=" + den +
                 '}';
     }
