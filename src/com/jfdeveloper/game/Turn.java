@@ -1,11 +1,8 @@
 package com.jfdeveloper.game;
 
 import com.jfdeveloper.actors.Wizard;
-import com.jfdeveloper.dice.Cup;
 import com.jfdeveloper.ui.BWConsole;
-import com.jfdeveloper.ui.ColorConsole;
-import com.jfdeveloper.ui.Console;
-import com.jfdeveloper.ui.Dbug;
+import com.jfdeveloper.ui.WizardConsole;
 
 
 import java.util.List;
@@ -13,7 +10,7 @@ import java.util.List;
 public class Turn {
     
     private Wizard wiz;
-    private Console console = new BWConsole();
+    private WizardConsole console = new BWConsole();
     // private List<Wizard> wizards;
 
     public void turn(List<Wizard> wizards) {
@@ -28,6 +25,7 @@ public class Turn {
             wiz.addMana();
             wiz.getCup().roll();
            // System.out.println(wiz.getCup().displayCup());
+            wiz.getCup().groupDisplay();
             console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana());
             while (true) {
                 int choice = console.wizardChoice(wiz.getMana());

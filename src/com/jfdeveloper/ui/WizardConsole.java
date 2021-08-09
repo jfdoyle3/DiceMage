@@ -6,7 +6,7 @@ import com.jfdeveloper.dice.Die;
 
 import java.util.List;
 
-public interface Console {
+public interface WizardConsole {
 
     void manaDice(List<Die> dice);
 
@@ -16,5 +16,5 @@ public interface Console {
 
     void wizardsStatus(List<Wizard> wizards);
 
-     void buyMonster(int mana,int denSize);
+    void buyMonster(int mana,int denSize);
 }

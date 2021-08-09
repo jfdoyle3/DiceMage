@@ -1,6 +1,5 @@
 package com.jfdeveloper.ui;
 
-import com.jfdeveloper.actors.Monster;
 import com.jfdeveloper.actors.Wizard;
 import com.jfdeveloper.dice.Die;
 
@@ -8,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class BWConsole implements Console {
+public class BWConsole implements WizardConsole {
 
     public void statusBar(String name, int health, int power, int mana) {
         System.out.printf("Wizard: %s\nHealth: %d\tPower level: %d\tMana: %d\n", name, health, power, mana);
@@ -42,6 +41,7 @@ public class BWConsole implements Console {
         int dieSize=Math.abs(mana-denSize-3);
         int price=3+dieSize+denSize;
         int minDie=3;
+        int maxDie=10;
         System.out.println("you can get die: "+minDie+" - "+dieSize);
         System.out.printf("\n\ndenSize:  %d\ndieSize: %d\nmana: %d\n---------\nprice: %d",denSize,dieSize,mana,price);
     }

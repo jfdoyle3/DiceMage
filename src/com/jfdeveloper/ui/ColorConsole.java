@@ -1,17 +1,14 @@
 package com.jfdeveloper.ui;
 
-import com.jfdeveloper.actors.Monster;
 import com.jfdeveloper.actors.Wizard;
-import com.jfdeveloper.dice.Dice;
 import com.jfdeveloper.dice.Die;
 
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-public class ColorConsole implements Console {
+public class ColorConsole implements WizardConsole {
 
     private static final String RESET="\033[0m";
     private static final String RED_BACKGROUND="\033[41m";

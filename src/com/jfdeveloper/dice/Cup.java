@@ -62,19 +62,19 @@ public class Cup {
         return selections;
     }
 
-    public void groupDisplay(List<Die> dice2) {
-        for (Die die : dice2) {
-            if (!groupDice.containsKey(die))
+    public void groupDisplay() {
+        groupDice= new TreeMap<>();
+        for (Die die : dice) {
+            if (!groupDice.containsKey(die.getFaceUp()))
                 groupDice.put(die.getFaceUp(), 0);
 
-            groupDice.put(die.getFaceUp(), groupDice.get(die) + 1);
+            groupDice.put(die.getFaceUp(), groupDice.get(die.getFaceUp()) + 1);
         }
 
         for(Map.Entry<Integer,Integer> entry : groupDice.entrySet()){
             int key=entry.getKey();
             int value=entry.getValue();
-            Dbug.dbug("key: ",key);
-            Dbug.dbug("value: ", value);
+            System.out.print(key+" ");
         }
     }
 

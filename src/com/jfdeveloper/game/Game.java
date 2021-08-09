@@ -1,10 +1,8 @@
 package com.jfdeveloper.game;
 
 import com.jfdeveloper.actors.Wizard;
-import com.jfdeveloper.dice.Dice;
-import com.jfdeveloper.dice.Die;
 import com.jfdeveloper.ui.BWConsole;
-import com.jfdeveloper.ui.Console;
+import com.jfdeveloper.ui.WizardConsole;
 import com.jfdeveloper.ui.Dbug;
 import com.jfdeveloper.ui.Input;
 
@@ -16,7 +14,7 @@ public class Game{
 
     private Wizard wiz;
 //    private int wizards = 2;
-    private Console console = new BWConsole();
+    private WizardConsole console = new BWConsole();
     private int choice;
     private boolean turn;
     private List<Wizard> wizards=new ArrayList<>();
