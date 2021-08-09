@@ -22,19 +22,20 @@ public class ColorConsole implements WizardConsole {
 
     }
 
-    public void manaDice(List<Die> list) {
-      //  Collections.sort(list, Dice::group());
+    public void manaDice(String dieFaces) {
+        char unsortedDieFaces[] = dieFaces.toCharArray();
+        Arrays.sort(unsortedDieFaces);
         System.out.println(Color.BLUE);
         StringBuilder dice = new StringBuilder();
         StringBuilder part1 = new StringBuilder();
         StringBuilder part2 = new StringBuilder();
         StringBuilder part3 = new StringBuilder();
-        for (Die die : list) {
+        for (char dieFace : unsortedDieFaces) {
             part1.append(BLUE_BACKGROUND).append("     ")
                     .append(RESET).append(" ");
 
             part2.append(BLUE_BACKGROUND).append("  ")
-                    .append(WHITE_BOLD_BRIGHT).append(die.getFaceUp())
+                    .append(WHITE_BOLD_BRIGHT).append(dieFace)
                     .append(BLUE_BACKGROUND).append("  ")
                     .append(RESET).append(" ");
 
@@ -53,26 +54,29 @@ public class ColorConsole implements WizardConsole {
 //        System.out.printf("Name: %s\nHealth: %d\tPower level: %d\tMana: %d\n",name, health, power, mana);
 //    }
 
-    public void statusBar(String name,int hitPoints, int powerLvl,int manaPoints) {
+
+    public void statusBar(String name, int hitPoints, int powerLvl, int manaPoints) {
         System.out.println("Wizard: "+name);
             for(int hp=0; hp<hitPoints; hp++)
-                System.out.print(RED_BACKGROUND + "▐"+RESET+" ");
+                System.out.print(Color.RED + "▐"+RESET);
 
         System.out.print("\t");
 
         for(int pl=0; pl<powerLvl; pl++)
-            System.out.print(GREEN_BACKGROUND + "▐"+RESET+" ");
+            System.out.print(Color.GREEN + "▐"+RESET);
 
         System.out.print("\t");
 
         for(int mana=0; mana<manaPoints; mana++)
-            System.out.print(BLUE_BACKGROUND + "▐"+RESET+" ");
+            System.out.print(Color.BLUE + "▐"+RESET);
 
         System.out.print("\t\n");
     }
 
+
+
     @Override
-    public int wizardChoice(int mana) {
+    public int wizardChoice(int mana, int denSize) {
         List<String> choices = new ArrayList<>(Arrays.asList("Increase Power Level", "Spawn Monster", "Check Status", "End Turn"));
         System.out.println();
         int idx = 0;

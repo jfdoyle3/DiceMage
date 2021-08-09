@@ -1,10 +1,7 @@
 package com.jfdeveloper.game;
 
 import com.jfdeveloper.actors.Wizard;
-import com.jfdeveloper.ui.BWConsole;
-import com.jfdeveloper.ui.WizardConsole;
-import com.jfdeveloper.ui.Dbug;
-import com.jfdeveloper.ui.Input;
+import com.jfdeveloper.ui.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +19,7 @@ public class Game{
 
     public Game() {
 
-      //  TODO: fix dice
+
        initWizards();
     }
 
@@ -35,9 +32,9 @@ public class Game{
     }
 
     private void initWizards() {
-        System.out.println("How many Wizards?");
-        int players = Input.inputNumber();
-        for (int i = 0; i < players; i++) {
+//        System.out.println("How many Wizards?");
+//        int players = Input.inputNumber();
+        for (int i = 0; i < 2; i++) {
             System.out.println("What is your name?");
             wizards.add(new Wizard((Input.inputString()).trim()));
         }

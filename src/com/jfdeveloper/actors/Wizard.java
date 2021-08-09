@@ -3,6 +3,7 @@ package com.jfdeveloper.actors;
 import com.jfdeveloper.dice.Cup;
 import com.jfdeveloper.dice.Die;
 import com.jfdeveloper.objects.Den;
+import com.jfdeveloper.ui.Dbug;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,8 +76,12 @@ public class Wizard {
         cup.addDice(1);
     }
 
-    public void freqAddMana(int freqTreeMap){
-         mana=freqTreeMap-2;
+    public void bonusMana(int freqTreeMap){
+        Dbug.dbug("MANA BEFORE: ",mana);
+        int manaInc=freqTreeMap-2;
+        mana=mana+manaInc;
+        Dbug.dbug("MANA BONUS: ",manaInc);
+        Dbug.dbug("MANA AFTER: ",mana);
     }
 
     @Override
