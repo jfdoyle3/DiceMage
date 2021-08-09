@@ -15,7 +15,6 @@ public class Monster {
     }
 
 
-
     public void attack() {
         monster.roll();
     }

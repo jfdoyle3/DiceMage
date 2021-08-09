@@ -2,7 +2,7 @@ package com.jfdeveloper.game;
 
 import com.jfdeveloper.actors.Wizard;
 import com.jfdeveloper.ui.BWConsole;
-import com.jfdeveloper.ui.ColorConsole;
+
 import com.jfdeveloper.ui.WizardConsole;
 
 
@@ -18,22 +18,24 @@ public class Turn {
 
         int wizardRosterSize = wizards.size();
         int wizIdxTurn = 0;
-
+        int turnX=0;
         while (true) {
             wiz = wizards.get(wizIdxTurn);
+            if(turnX==0)
+                wiz.getDen().spawnMonster(3);
+
             if (wiz.getHealth() == 0)
                 break;
 
             wiz.getCup().roll();
             wiz.addMana();
-            int bonusMana = wiz.getCup().group();
-            System.out.println(bonusMana);
-            if (bonusMana >= 3)
-                wiz.bonusMana(bonusMana);
+
+            checkForBonusMana();
+
             String output = wiz.getCup().displayCup();
             console.manaDice(output);
-            // wiz.getCup().groupDisplay();
-            console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana());
+
+            console.statusBar(wiz.getName(), wiz.getHealth(), wiz.getPowerLevel(), wiz.getMana(),wiz.getDen().toString());
             while (true) {
                 int choice = console.wizardChoice(wiz.getMana(), wiz.getDen().denSize());
                 boolean turn = choiceDecision(wizards, wizIdxTurn, choice);
@@ -41,10 +43,18 @@ public class Turn {
                     break;
             }
             wizIdxTurn++;
+            turnX++;
             if (wizIdxTurn == wizardRosterSize)
                 wizIdxTurn = 0;
         }
     }
+
+    private void checkForBonusMana() {
+        int bonusMana = wiz.getCup().group();
+        if (bonusMana >= 3)
+            wiz.bonusMana(bonusMana);
+    }
+
 
     private boolean choiceDecision(List<Wizard> wizards, int wizNum, int choice) {
         boolean turn = true;

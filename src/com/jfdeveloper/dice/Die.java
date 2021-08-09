@@ -18,7 +18,7 @@ public class Die {
 
     public Die (int faces){
         this.faces=faces;
-        faceUp=1;
+        faceUp=faces;
     }
 
     public void roll(){

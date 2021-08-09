@@ -20,7 +20,7 @@ public class Game{
     public Game() {
 
 
-       initWizards();
+     //  initWizards();
     }
 
     public void play() {
@@ -42,10 +42,39 @@ public class Game{
 
     public void testWiz(){
         Wizard g=new Wizard("G");
-        Dbug.dbug("wiz: ",g);
-        g.getDen().spawnMonster(20);
+        Wizard m=new Wizard("M");
 
-        Dbug.dbug("wiz: ",g);
+        //
+        g.getDen().spawnMonster(20);
+        m.getDen().spawnMonster(20);
+        g.getDen().spawnMonster(20);
+        m.getDen().spawnMonster(20);
+
+
+        System.out.println("G");
+        g.getDen().displayDen();
+        System.out.println();
+        System.out.println("M");
+        m.getDen().displayDen();
+        System.out.println();
+       m.getDen().denAction().get(0).getMonster().roll();
+        g.getDen().denAction().get(0).getMonster().roll();
+        int mAttack=m.getDen().denAction().get(0).getMonster().getFaceUp();
+        int gAttack=g.getDen().denAction().get(0).getMonster().getFaceUp();
+        System.out.println("\nG");
+        g.getDen().displayDen();
+
+        System.out.println("\nM");
+        m.getDen().displayDen();
+
+        if(mAttack>gAttack)
+            System.out.println("\nM Wins");
+
+        else
+            System.out.println("\nG Wins");
+     //   System.out.println(g.getDen().getDen().get(0).getMonster().getFaceUp());
+
+
 
     }
 }
