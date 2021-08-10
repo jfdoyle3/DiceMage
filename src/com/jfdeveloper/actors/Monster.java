@@ -1,10 +1,6 @@
 package com.jfdeveloper.actors;
 
 import com.jfdeveloper.dice.Die;
-import com.jfdeveloper.objects.Den;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Monster {
     private Die monster;

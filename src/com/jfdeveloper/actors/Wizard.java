@@ -1,12 +1,8 @@
 package com.jfdeveloper.actors;
 
 import com.jfdeveloper.dice.Cup;
-import com.jfdeveloper.dice.Die;
-import com.jfdeveloper.objects.Den;
+import com.jfdeveloper.game.Den;
 import com.jfdeveloper.ui.Dbug;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Wizard {
 
@@ -56,10 +52,8 @@ public class Wizard {
         return cup;
     }
 
-    // TODO: Remove
-    public int setHealth(int health) {
-        this.health = health;
-        return health;
+    public void dmgHealth(){
+        health--;
     }
 
     public Den getDen() {
@@ -75,13 +69,13 @@ public class Wizard {
         powerLevel++;
         cup.addDice(1);
     }
+    public void removeMana(int amount){
+        mana-=amount;
+    }
 
     public void bonusMana(int freqTreeMap){
-        Dbug.dbug("MANA BEFORE: ",mana);
         int manaInc=freqTreeMap-2;
         mana=mana+manaInc;
-        Dbug.dbug("MANA BONUS: ",manaInc);
-        Dbug.dbug("MANA AFTER: ",mana);
     }
 
     @Override

@@ -1,22 +1,20 @@
 package com.jfdeveloper.ui;
 
 import com.jfdeveloper.actors.Wizard;
-import com.jfdeveloper.dice.Die;
-import com.jfdeveloper.objects.Den;
 
 import java.util.*;
 
 public class BWConsole implements WizardConsole {
 
-    public void statusBar(String name, int health, int power, int mana, String den) {
+    public void statusBar(String name, int health, int power, int mana) {
         System.out.printf("\nWizard: %s\nHealth: %d\tPower level: %d\tMana: %d\n", name, health, power, mana);
-        System.out.printf("\nDen: ",den);
     }
 
     public void wizardsStatus(List<Wizard> wizards) {
-        for(Wizard wizard : wizards)
-            System.out.printf("\n\nWizard: %s\nHealth: %d\tPower level: %d\tMana: %d\n", wizard.getName(),wizard.getHealth(),wizard.getPowerLevel(),wizard.getMana());
-
+        for(Wizard wizard : wizards) {
+            System.out.printf("\n\nWizard: %s\nHealth: %d\tPower level: %d\tMana: %d\n", wizard.getName(), wizard.getHealth(), wizard.getPowerLevel(), wizard.getMana());
+            wizard.getDen().displayDen();
+        }
     }
 
     public void manaDice(String dieFaces) {
@@ -63,14 +61,20 @@ public class BWConsole implements WizardConsole {
         return Input.inputNumber();
     }
 
-    public void buyMonster(int mana,int denSize){
+    public int buyMonster(int mana, int denSize){
         System.out.println("Buy Monster: ");
         int dieSize=Math.abs(mana-denSize-3);
-        int price=3+dieSize+denSize;
         int minDie=3;
         int maxDie=10;
+        if(dieSize<3)
+            dieSize=minDie;
+       if(dieSize>10)
+           dieSize=maxDie;
+
         System.out.println("you can get die: "+minDie+" - "+dieSize);
-        System.out.printf("\n\ndenSize:  %d\ndieSize: %d\nmana: %d\n---------\nprice: %d",denSize,dieSize,mana,price);
+        int buy=Input.inputNumber();
+        int bought=buy+denSize;
+        return bought;
     }
 }
 

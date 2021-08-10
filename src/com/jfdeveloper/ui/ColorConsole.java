@@ -2,7 +2,7 @@
 //
 //import com.jfdeveloper.actors.Wizard;
 //import com.jfdeveloper.dice.Die;
-//import com.jfdeveloper.objects.Den;
+//import com.jfdeveloper.game.Den;
 //
 //
 //import java.util.ArrayList;

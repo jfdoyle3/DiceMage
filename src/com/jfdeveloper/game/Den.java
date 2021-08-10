@@ -1,6 +1,7 @@
-package com.jfdeveloper.objects;
+package com.jfdeveloper.game;
 
 import com.jfdeveloper.actors.Monster;
+import com.jfdeveloper.actors.Wizard;
 import com.jfdeveloper.dice.Die;
 import com.sun.source.tree.Tree;
 
@@ -26,6 +27,10 @@ public class Den {
             monster.attack();
     }
 
+    public void removeMonster(int idx){
+        den.remove(idx);
+    }
+
     public void monsterAttack(int idx) {
         Monster monster = den.get(idx);
         monster.attack();
@@ -36,9 +41,9 @@ public class Den {
     }
 
     public void displayDen(){
+        System.out.print("Den: ");
         for(Monster monster : den)
             System.out.print(monster.getMonster()+" ");
-
     }
 
     public List<Monster> denAction() {
