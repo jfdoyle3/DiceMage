@@ -21,8 +21,14 @@ public class Turn {
 
         while (true) {
             wiz = wizards.get(wizIdxTurn);
-            if (wiz.getHealth() == 0)
+            if (wizards.get(wizIdxTurn).getHealth() == 0){
+                for(Wizard wizWon : wizards){
+                    if(wizWon.getHealth()>0)
+                    System.out.println("Wizard: "+wizWon.getName()+" won!");
+                }
                 break;
+            }
+
 
             wiz.getCup().roll();
             wiz.addMana();
@@ -66,8 +72,9 @@ public class Turn {
             case 1 -> wizards.get(wizNum).incPower();
             case 2 -> buyMonster();
             case 3 -> {
-
-                monsterAttack(wizards.get(0),wizards.get(1));
+                if(wizNum==0)
+                    oppWiz=1;
+                monsterAttack(wizards.get(wizNum),wizards.get(oppWiz));
             }
             case 4 -> console.wizardsStatus(wizards);
             case 5 -> turn = false;

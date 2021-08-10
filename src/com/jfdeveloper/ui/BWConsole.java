@@ -40,24 +40,25 @@ public class BWConsole implements WizardConsole {
 //            Dbug.dbug("key: ",key);
 //            Dbug.dbug("value: ", value);
 //        }
-       turnOptions.append(choices.get(3)+"\n"+choices.get(4));
-        System.out.println();
-        if(mana > 6 && denSize>0)
-            System.out.println(optionList.append(choices.get(0)+"\n").append(choices.get(1)+"\n").append(choices.get(2)+"\n").append(turnOptions));
-        if(mana>6 && denSize<=0)
-            System.out.println(optionList.append(choices.get(0)+"\n").append(choices.get(1)+"\n").append(turnOptions));
-        if(mana > 3 && denSize<=0)
-            System.out.println(optionList.append(choices.get(0)+"\n").append(turnOptions));
+//       turnOptions.append(choices.get(3)+"\n"+choices.get(4));
+//        System.out.println();
+//        if(mana > 6 && denSize>0)
+//            System.out.println(optionList.append(choices.get(0)+"\n").append(choices.get(1)+"\n").append(choices.get(2)+"\n").append(turnOptions));
+//        if(mana>6 && denSize<=0)
+//            System.out.println(optionList.append(choices.get(0)+"\n").append(choices.get(1)+"\n").append(turnOptions));
+//        if(mana > 3 && denSize<=0)
+//            System.out.println(optionList.append(choices.get(0)+"\n").append(turnOptions));
+//
+//        if (mana < 3 && denSize>0)
+//            System.out.println(optionList.append(choices.get(2)+"\n").append(turnOptions));
+//
+//        if(mana<3 && denSize<=0)
+//            System.out.println(turnOptions);
+        System.out.println("\n");
+        for(String choice : choices)
+            System.out.println(choice);
 
-        if (mana < 3 && denSize>0)
-            System.out.println(optionList.append(choices.get(2)+"\n").append(turnOptions));
-
-        if(mana<3 && denSize<=0)
-            System.out.println(turnOptions);
-
-
-
-        System.out.println("What say you?");
+        System.out.println("What is your choice?");
         return Input.inputNumber();
     }
 
