@@ -88,7 +88,7 @@ public class Turn {
         wiz.getDen().spawnMonster(monsterDie);
         wiz.removeMana(3+monsterDie);
 
-    }
+    } 
 
     private void monsterAttack(Wizard wiz1, Wizard wiz2) {
         System.out.println("roll: ");
