@@ -85,38 +85,40 @@ public class Turn {
 
     private void monsterAttack(Wizard wiz1, Wizard wiz2) {
         System.out.println("roll: ");
-        if (wiz2.getDen().denSize() == 0) {
-            wiz2.dmgHealth();
-            return;
-        }
-        System.out.println("den1: "+wiz1.getDen().denSize());
-        System.out.println("den2: "+wiz2.getDen().denSize());
-        wiz1.getDen().denAction().get(0).getMonster().roll();
-        wiz2.getDen().denAction().get(0).getMonster().roll();
+        for (int idx = 0; idx < wiz1.getDen().denSize(); idx++) {
+            if (wiz2.getDen().denSize() == 0) {
+                wiz2.dmgHealth();
+                return;
+            }
+            System.out.println("den1: " + wiz1.getDen().denSize());
+            System.out.println("den2: " + wiz2.getDen().denSize());
 
-        int wiz1Attack = wiz1.getDen().denAction().get(0).getMonster().getFaceUp();
-        int wiz2Attack = wiz2.getDen().denAction().get(0).getMonster().getFaceUp();
+            wiz1.getDen().denAction().get(idx).getMonster().roll();
+            wiz2.getDen().denAction().get(idx).getMonster().roll();
+
+            int wiz1Attack = wiz1.getDen().denAction().get(idx).getMonster().getFaceUp();
+            int wiz2Attack = wiz2.getDen().denAction().get(idx).getMonster().getFaceUp();
 
 
-        System.out.println("\nG");
-        wiz1.getDen().displayDen();
-        System.out.println("\nM");
-        wiz2.getDen().displayDen();
+            System.out.println("\nG");
+            wiz1.getDen().displayDen();
+            System.out.println("\nM");
+            wiz2.getDen().displayDen();
 
             if (wiz1Attack == wiz2Attack) {
                 System.out.println("Tie: both die");
-                wiz1.getDen().removeMonster(0);
-                wiz2.getDen().removeMonster(0);
+                wiz1.getDen().removeMonster(idx);
+                wiz2.getDen().removeMonster(idx);
             } else {
                 if (wiz1Attack > wiz2Attack) {
                     System.out.println("\nwiz1 Wins");
-                    wiz2.getDen().removeMonster(0);
+                    wiz2.getDen().removeMonster(idx);
                 } else {
                     System.out.println("\nwiz2 Wins");
-                    wiz1.getDen().removeMonster(0);
+                    wiz1.getDen().removeMonster(idx);
                 }
             }
         }
-
+    }
 
 }
