@@ -12,7 +12,7 @@ import java.util.TreeMap;
 public class Den {
 
     private List<Monster> den;
-    private TreeMap<Integer,Integer> treeDen;
+    private TreeMap<Integer, Integer> treeDen;
 
     public Den() {
         den = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Den {
             monster.attack();
     }
 
-    public void removeMonster(int idx){
+    public void removeMonster(int idx) {
         den.remove(idx);
     }
 
@@ -40,10 +40,14 @@ public class Den {
         return den.size();
     }
 
-    public void displayDen(){
+    public void displayDen() {
         System.out.print("Den: ");
-        for(Monster monster : den)
-            System.out.print(monster.getMonster()+" ");
+        for (Monster monster : den)
+            System.out.print(monster.getMonster() + " ");
+    }
+
+    public boolean isEmpty() {
+        return den.size() == 0 ? true : false;
     }
 
     public List<Monster> denAction() {
