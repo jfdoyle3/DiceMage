@@ -20,8 +20,7 @@ public class Game {
 
     public Game() {
 
-
-        //   initWizards();
+           initWizards();
     }
 
     public void play() {

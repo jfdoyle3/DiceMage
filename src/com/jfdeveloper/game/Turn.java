@@ -61,6 +61,7 @@ public class Turn {
     private void checkForBonusMana() {
         int bonusMana = wiz.getCup().group();
         if (bonusMana >= 3)
+            System.out.println("Bonus Mana: "+(bonusMana-2));
             wiz.bonusMana(bonusMana);
     }
 
@@ -68,6 +69,11 @@ public class Turn {
     private boolean choiceDecision(List<Wizard> wizards, int wizNum, int choice) {
         boolean turn = true;
         int oppWiz=0;
+        if (choice==1 || choice==2 && wizards.get(wizNum).getMana()<3)
+            choice=6;
+        if(choice==3 && wizards.get(wizNum).getDen().isEmpty()){
+            choice=6;
+        }
         switch (choice) {
             case 1 -> wizards.get(wizNum).incPower();
             case 2 -> buyMonster();
